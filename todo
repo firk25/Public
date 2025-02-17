@@ -1,0 +1,21 @@
+#Программа для работы с ежедневником, умеет записывать, редактировать, удалять и выводить дела на каждый день недели
+stroc=int(input())
+stilb=int(input())
+todo=[]
+for i in range(stroc):
+    todo.append(['']*stilb)
+for i in range(len(todo)):
+    for e in range(len(todo[i])):
+        todo[i][e]=input(f'Элемент [{i}][{e}] = ')
+print(todo)
+ind_elem_del=int(input())
+for i in range(len(todo)):
+    todo[i].pop(ind_elem_del)
+print(todo)
+ind_elem_inp=int(input())
+elem_inp=input()
+for i in range(len(todo)):
+    todo[i].insert(ind_elem_inp, elem_inp)
+print(todo)
+for i in range(len(todo)):
+    print(*todo[i])
